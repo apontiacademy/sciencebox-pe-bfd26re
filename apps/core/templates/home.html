@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="hero-container">
+
+    <div class="hero-content">
+    
+
+      <!-- LOGO GRANDE -->
+        <img src="{% static 'img/logo-big.png' %}" class="logo-hero">
+      
+        <h1>
+        Tecnologia que ensina<br>
+        Ciência que conecta
+      </h1>
+
+      <p>
+        Kits tecnológicos para aprendizado prático em ciência e inovação.
+      </p>
+
+      <a href="/kits/" class="btn-hero">
+        COMPRAR →
+      </a>
+    </div>
+
+
+  </div>
+</section>
+
+  <section class="sobre-preview">
+
+  <div class="preview-cards">
+
+    <div class="preview-card">
+      <h3>MISSÃO</h3>
+      <p>Transformar a educação com kits tecnológicos e aprendizado prático.</p>
+    </div>
+
+    <div class="preview-card">
+      <h3>VISÃO</h3>
+      <p>Ser referência em inovação educacional no Brasil e no mundo.</p>
+    </div>
+
+    <div class="preview-card">
+      <h3>VALORES</h3>
+      <p>Inovação, inclusão, sustentabilidade e impacto social.</p>
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock %}

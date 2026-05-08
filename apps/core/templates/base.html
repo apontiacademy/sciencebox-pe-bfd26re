@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScienceBox</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+  <!-- MENU -->
+  <nav class="side-nav">
+
+    <a href="/" class="{% if request.path == '/' %}active{% endif %}">
+      <span>01</span> Home
+    </a>
+
+    <a href="/kits/" class="{% if '/kits' in request.path %}active{% endif %}">
+      <span>02</span> Produtos
+    </a>
+
+    <a href="/sobre/" class="{% if '/sobre' in request.path %}active{% endif %}">
+      <span>03</span> Sobre
+    </a>
+
+    <a href="/solucoes/" class="{% if '/solucoes' in request.path %}active{% endif %}">
+      <span>04</span> Tecnologias
+    </a>
+
+    <a href="/contato/" class="{% if '/contato' in request.path %}active{% endif %}">
+      <span>05</span> Contato
+    </a>
+
+  </nav>
+
+  <!-- CONTEÚDO -->
+  <main class="site-main">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- 🔥 SCRIPT DO SLIDER (CORRIGIDO) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const slides = document.querySelectorAll('.slide')
+      const btnLeft = document.querySelector('.arrow.left')
+      const btnRight = document.querySelector('.arrow.right')
+
+      let current = 1
+
+      function updateSlider() {
+        slides.forEach((slide, index) => {
+          slide.classList.remove('active')
+          if (index === current) {
+            slide.classList.add('active')
+          }
+        })
+      }
+
+      if (btnRight && btnLeft && slides.length > 0) {
+
+        btnRight.addEventListener('click', () => {
+          current++
+          if (current >= slides.length) current = 0
+          updateSlider()
+        })
+
+        btnLeft.addEventListener('click', () => {
+          current--
+          if (current < 0) current = slides.length - 1
+          updateSlider()
+        })
+
+        // inicia correto
+        updateSlider()
+      }
+
+    })
+  </script>
+
+</body>
+</html>
