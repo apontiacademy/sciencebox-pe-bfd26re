@@ -103,12 +103,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# Pasta onde o Django vai reunir tudo para produção
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Configuração WhiteNoise para gerenciar os arquivos no Vercel
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# MUDANÇA AQUI: Desative o Manifest temporariamente para o Vercel não se perder com os nomes dos arquivos
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-WHITENOISE_USE_MANIFEST_STORAGE = True
+WHITENOISE_USE_MANIFEST_STORAGE = False
 
 # =========================
 # MEDIA
