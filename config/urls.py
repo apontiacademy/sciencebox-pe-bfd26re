@@ -18,6 +18,7 @@ if not settings.DEBUG:
         re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     ]
 else:
-    # Configuração padrão para desenvolvimento local
+    # Configuração padrão para desenvolvimento local (DEBUG=True)
+    # Note que usamos STATICFILES_DIRS aqui para o ambiente local encontrar seus arquivos originais
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

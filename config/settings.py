@@ -1,6 +1,5 @@
 from pathlib import Path
 import os
-import subprocess
 
 # Caminho base
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,8 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Segurança
 SECRET_KEY = 'django-insecure-trocar-depois'
 
-# Deixe True para debug, mas mude para False quando tudo estiver ok
-DEBUG = True 
+# Em produção no Vercel, mude para False para o WhiteNoise funcionar 100%
+DEBUG = False 
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,7 +39,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # WhiteNoise deve estar aqui!
+    # WhiteNoise deve estar aqui!
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -93,7 +93,7 @@ USE_I18N = True
 USE_TZ = True
 
 # =========================
-# STATIC FILES (CONFIGURAÇÃO FINAL)
+# STATIC FILES (A JUSTIÇA FINAL)
 # =========================
 
 STATIC_URL = '/static/'
@@ -103,12 +103,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# Pasta onde o Django vai reunir tudo
+# Pasta onde o Django vai reunir tudo para produção
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# WhiteNoise Storage - Simplificado para evitar erros de Manifest no Vercel
+# Configuração WhiteNoise para gerenciar os arquivos no Vercel
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-WHITENOISE_USE_MANIFEST_STORAGE = False # Mude para False se os nomes com hash derem erro
+WHITENOISE_USE_MANIFEST_STORAGE = True
 
 # =========================
 # MEDIA
@@ -123,14 +123,3 @@ CORS_ALLOW_ALL_ORIGINS = True
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']
 }
-
-# ==========================================================
-# PLANO B: FORÇAR COLLECTSTATIC NO VERCEL
-# ==========================================================
-if os.environ.get('VERCEL'):
-    try:
-        print("Ambiente Vercel detectado. Rodando collectstatic...")
-        # No Vercel, o comando costuma ser 'python' e não 'python3'
-        subprocess.run(['python', 'manage.py', 'collectstatic', '--noinput'])
-    except Exception as e:
-        print(f"Erro no collectstatic: {e}")
