@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block body_class %}kits-page{% endblock %}
+
+{% block content %}
+
+<section class="produtos-slider">
+
+  <h2>Produtos</h2>
+
+  <div class="slider">
+
+    <button class="arrow left">←</button>
+
+    <div class="slider-track">
+
+      <div class="slide small">
+        <div class="circle"></div>
+        <p>BIOSIN</p>
+      </div>
+
+      <div class="slide active">
+
+        <div class="circle big"></div>
+
+        <h3>CAPACITAÇÃO DE EQUIPE</h3>
+
+        <p>
+          Capacitação em tecnologia para escolas e empresas.
+        </p>
+
+        <div class="produto-indicadores">
+          <span class="ativo"></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </div>
+
+      <div class="slide small">
+        <div class="circle"></div>
+        <p>BRAINREC</p>
+      </div>
+
+    </div>
+
+    <button class="arrow right">→</button>
+
+  </div>
+
+</section>
+
+{% endblock %}

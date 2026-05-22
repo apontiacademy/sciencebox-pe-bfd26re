@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScienceBox</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+  <nav class="side-nav">
+    
+    <div class="side-logo">
+      <img src="{% static 'img/logo-small.png' %}" class="logo-sidebar-fix" alt="ScienceBox">
+    </div>
+
+    <ul>
+      <li>
+        <a href="/" class="{% if request.path == '/' %}active{% endif %}">
+          <span class="menu-number">01</span>
+          <i class="menu-dot"></i> <span class="menu-text">Home</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/kits/" class="{% if '/kits' in request.path %}active{% endif %}">
+          <span class="menu-number">02</span>
+          <i class="menu-dot"></i>
+          <span class="menu-text">Kits</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/sobre/" class="{% if '/sobre' in request.path %}active{% endif %}">
+          <span class="menu-number">03</span>
+          <i class="menu-dot"></i>
+          <span class="menu-text">Sobre Nós</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/solucoes/" class="{% if '/solucoes' in request.path %}active{% endif %}">
+          <span class="menu-number">04</span>
+          <i class="menu-dot"></i>
+          <span class="menu-text">Soluções</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/contato/" class="{% if '/contato' in request.path %}active{% endif %}">
+          <span class="menu-number">05</span>
+          <i class="menu-dot"></i>
+          <span class="menu-text">Contato</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="site-main">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide')
+      const btnLeft = document.querySelector('.arrow.left')
+      const btnRight = document.querySelector('.arrow.right')
+
+      let current = 1
+
+      function updateSlider() {
+        slides.forEach((slide, index) => {
+          slide.classList.remove('active')
+          if (index === current) {
+            slide.classList.add('active')
+          }
+        })
+      }
+
+      if (btnRight && btnLeft && slides.length > 0) {
+        btnRight.addEventListener('click', () => {
+          current++
+          if (current >= slides.length) current = 0
+          updateSlider()
+        })
+
+        btnLeft.addEventListener('click', () => {
+          current--
+          if (current < 0) current = slides.length - 1
+          updateSlider()
+        })
+
+        updateSlider()
+      }
+    })
+  </script>
+
+</body>
+</html>

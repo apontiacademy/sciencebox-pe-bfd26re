@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="contato-page">
+
+  <div class="contato-esquerda">
+
+    <h1>
+      Vamos construir seu projeto juntos
+    </h1>
+
+    <p>
+      Conte sua necessidade e retornaremos
+      com uma proposta personalizada.
+    </p>
+
+    <div class="beneficios">
+      <p>✔ Atendimento consultivo</p>
+      <p>✔ Propostas personalizadas</p>
+      <p>✔ Soluções sob medida</p>
+    </div>
+
+  </div>
+
+  <div class="contato-direita">
+
+    <form class="form-orcamento">
+
+      <h3>
+        Preencha e retornamos em até 24 horas
+      </h3>
+
+      <div class="grid-form">
+
+        <input
+          type="text"
+          placeholder="Seu nome"
+          required
+        >
+
+        <input
+          type="tel"
+          placeholder="WhatsApp"
+          required
+        >
+
+        <input
+          type="email"
+          placeholder="Seu e-mail"
+        >
+
+        <input
+          type="text"
+          placeholder="Empresa ou negócio"
+        >
+
+      </div>
+
+      <textarea
+        placeholder="Descreva seu projeto"
+      ></textarea>
+
+      <button class="botao">
+        Solicitar orçamento
+      </button>
+
+      <small>
+        Retornamos em até 24 horas úteis.
+      </small>
+
+    </form>
+
+  </div>
+
+</section>
+
+{% endblock %}
