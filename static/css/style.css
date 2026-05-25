@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html {
@@ -1225,6 +1227,7 @@ footer {
 /* ================= BARRA LATERAL FIXED E ALINHADA ================= */
 
 .side-nav {
+
   position: fixed;
 
   left: 0;
@@ -1248,7 +1251,7 @@ footer {
 
 /* LOGO */
 .side-nav .logo img{
-  width: 130px;
+  width: 330px;
 }
 
 
@@ -1265,7 +1268,7 @@ footer {
   padding: 0;
 
   /* sobe o menu */
-  margin: -40px 0 0 0;
+  margin: -20px 0 0 0;
 }
 
 
@@ -1318,7 +1321,7 @@ footer {
 
   position: absolute;
 
-  left: 38px;
+  left: 30px;
 }
 
 
@@ -1888,7 +1891,7 @@ footer {
 }
 
 .hero-image img {
-  width: 560px !important; 
+  width: 760px !important; 
   height: auto;
   filter: drop-shadow(0 0 50px rgba(0, 240, 255, 0.25)); 
 }
