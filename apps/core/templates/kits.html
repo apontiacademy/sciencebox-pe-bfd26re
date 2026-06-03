@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block body_class %}kits-page{% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@
   <article class="card">
     <a href="#">
       <div class="card-image-container">
-        <img src="static/img/img-capacitacao.jpeg" alt="Qualificação">
+        <img src="{% static 'img/img-capacitacao.jpeg' %}" alt="Qualificação">
       </div>
       <h3>Qualificação</h3>
       <p>Capacitação em tecnologia para equipes escolares e de empresas.</p>
@@ -20,7 +20,7 @@
   <article class="card">
     <a href="#">
       <div class="card-image-container">
-        <img src="static/img/img-biosin.jpeg" alt="Biosin">
+        <img src="{% static 'img/img-biosin.jpeg' %}" alt="Biosin">
       </div>
       <h3>Biosin</h3>
       <p>Biosin Biosin Biosin Biosin Biosin Biosin Biosin Biosin Biosin</p>
@@ -31,7 +31,7 @@
     <article class="card">
     <a href="#">
       <div class="card-image-container">
-        <img src="img-brainrec.jpg" alt="Brainrec">
+        <img src="{% static 'img/img-brainrec.jpeg' %}" alt="Brainrec">
       </div>
       <h3>Brainrec</h3>
       <p>Brainrec Brainrec Brainrec Brainrec Brainrec Brainrec Brainrec</p>
