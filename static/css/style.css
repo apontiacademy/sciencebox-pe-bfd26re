@@ -304,28 +304,100 @@ section{
 
 /* SOBRE */
 
-.sobre-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:start;
+.sobre{
+  padding:100px 80px;
 }
 
-.sobre-texto-principal h2{
-  font-size:48px;
-  line-height:1.15;
+.sobre-layout{
+  position:relative;
+
+  max-width:1200px;
+  margin:0 auto;
+
+  min-height:650px;
 }
 
-.sobre-descricao{
-  background:rgba(0,240,255,.05);
-  border:1px solid rgba(0,240,255,.25);
-  border-radius:var(--radius);
-  padding:32px;
+/* TÍTULO */
+
+.sobre-layout h2{
+  width:100%;
+
+  font-size:45px;
+  font-weight:800;
+
+  line-height:1.1;
+
+  color:#fff;
+
+  margin-bottom:40px;
+
+  position:relative;
+  z-index:3;
 }
 
-.sobre-descricao p{
-  color:var(--text-muted);
-  line-height:1.8;
+/* CAIXA DE TEXTO */
+
+.sobre-card-texto{
+  width:80%;
+  height: 330px;
+
+  background:#43B8B5;
+
+  padding:40px;
+
+  border-radius:35px;
+
+  position:absolute;
+
+  left:0;
+  top:170px;
+
+  z-index:1;
+}
+
+.sobre-card-texto p{
+  color:#fff;
+
+  font-size:22px;
+
+  line-height:1.6;
+
+  margin-bottom:20px;
+  font-weight: bold;
+}
+
+.logo-sobre{
+  width:140px;
+  height:auto;
+
+  display:block;
+
+  margin-top:25px;
+  margin-left:auto;
+}
+
+.sobre-card-texto p:last-child{
+  margin-bottom:0;
+}
+
+/* IMAGEM */
+
+.sobre-imagem{
+  position:absolute;
+
+  right:0;
+  top:80px;
+
+  width:62%;
+
+  z-index:2;
+}
+
+.sobre-imagem img{
+  width:100%;
+  height:auto;
+
+  display:block;
 }
 
 /* CARDS */
@@ -392,6 +464,11 @@ section{
   color:var(--text-muted);
 }
 
+.solucao-icon img{
+  width:60px;
+  height:auto;
+}
+
 /* PRODUTOS */
 
 .card-image-container{
@@ -413,6 +490,33 @@ section{
   width:100%;
   height:100%;
   object-fit:cover;
+}
+
+.botao-card{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-top:20px;
+  padding:12px 24px;
+
+  border:2px solid #00F0FF;
+  border-radius:12px;
+
+  background:transparent;
+  color:#00F0FF;
+
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.5px;
+
+  transition:all .3s ease;
+
+  cursor:pointer;
+}
+
+.botao-card:hover{
+  transform:translateY(-2px) scale(1.05);
 }
 
 /* CONTATO */
