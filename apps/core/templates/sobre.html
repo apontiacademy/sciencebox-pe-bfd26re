@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="sobre">
+
+  <div class="sobre-layout">
+
+    <h2>
+      A Science Box conecta tecnologia, ciência e educação
+      através de experiências práticas e inovação.
+    </h2>
+
+    <div class="sobre-card-texto">
+      <p>
+        Desenvolvemos kits tecnológicos, soluções educacionais e <br>
+        experiências interativas para transformar a forma como alunos <br> 
+        aprendem ciência e tecnologia. Nosso objetivo é tornar o <br>
+        aprendizado mais acessível, moderno e conectado ao futuro.
+      </p>
+    </div>
+
+    <img
+    src="{% static 'img/logo-sobre.png' %}"
+    alt="Science Box"
+    class="logo-sobre"
+    >
+
+    <div class="sobre-imagem">
+      <img
+        src="{% static 'img/img-quem-somos.png' %}"
+        alt="Science Box"
+      >
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock %}

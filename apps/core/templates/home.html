@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero">
+
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="{% static 'video/home-video-bg.mp4' %}" type="video/mp4">
+  </video>
+
+  <div class="hero-container">
+
+    <div class="hero-text">
+
+      <h1>
+        Tecnologia que ensina <br>
+        Ciência que conecta
+      </h1>
+
+      <p>
+        Kits tecnológicos para aprendizado prático em ciência e inovação.
+      </p>
+
+      <a href="/kits/" class="btn-science-cta">
+        Nossos Produtos
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+{% endblock %}

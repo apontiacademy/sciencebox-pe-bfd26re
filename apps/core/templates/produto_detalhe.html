@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="produto-detalhe">
+
+    {% if produto.imagem %}
+        <img
+            src="{{ produto.imagem.url }}"
+            alt="{{ produto.nome }}"
+            class="detalhe-img"
+        >
+    {% endif %}
+
+    <h1>{{ produto.nome }}</h1>
+
+    <p>
+        {{ produto.descricao }}
+    </p>
+
+    <div class="acoes">
+        <a 
+        href="https://wa.me/5581999999999" 
+        target="_blank"
+        class="botao"
+        >
+Solicitar orçamento
+</a>
+
+        <a href="/" class="botao-voltar">
+            Voltar para produtos
+        </a>
+    </div>
+
+</section>
+
+
+<section class="numeros">
+    <div class="numero">
+        <h3>100%</h3>
+        <p>Educação STEM</p>
+    </div>
+
+    <div class="numero">
+        <h3>P&D</h3>
+        <p>Pesquisa e Desenvolvimento</p>
+    </div>
+
+    <div class="numero">
+        <h3>Labs</h3>
+        <p>Soluções científicas</p>
+    </div>
+</section>
+
+{% endblock %}
