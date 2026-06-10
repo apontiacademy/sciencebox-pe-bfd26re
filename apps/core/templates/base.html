@@ -12,7 +12,7 @@
 <body class="{% block body_class %}{% endblock %}">
 
   <nav class="side-nav">
-    
+
     <div class="side-logo">
       <img src="{% static 'img/logo-small.png' %}" class="logo-sidebar-fix" alt="ScienceBox">
     </div>
@@ -21,7 +21,8 @@
       <li>
         <a href="/" class="{% if request.path == '/' %}active{% endif %}">
           <span class="menu-number">01</span>
-          <i class="menu-dot"></i> <span class="menu-text">Home</span>
+          <i class="menu-dot"></i>
+          <span class="menu-text">Home</span>
         </a>
       </li>
 
@@ -50,13 +51,22 @@
       </li>
 
       <li>
-        <a href="/contato/" class="{% if '/contato' in request.path %}active{% endif %}">
+        <a href="/softwares/" class="{% if '/softwares' in request.path %}active{% endif %}">
           <span class="menu-number">05</span>
+          <i class="menu-dot"></i>
+          <span class="menu-text">Softwares</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/contato/" class="{% if '/contato' in request.path %}active{% endif %}">
+          <span class="menu-number">06</span>
           <i class="menu-dot"></i>
           <span class="menu-text">Contato</span>
         </a>
       </li>
     </ul>
+
   </nav>
 
   <main class="site-main">
@@ -75,6 +85,7 @@
       function updateSlider() {
         slides.forEach((slide, index) => {
           slide.classList.remove('active')
+
           if (index === current) {
             slide.classList.add('active')
           }
@@ -82,15 +93,24 @@
       }
 
       if (btnRight && btnLeft && slides.length > 0) {
+
         btnRight.addEventListener('click', () => {
           current++
-          if (current >= slides.length) current = 0
+
+          if (current >= slides.length) {
+            current = 0
+          }
+
           updateSlider()
         })
 
         btnLeft.addEventListener('click', () => {
           current--
-          if (current < 0) current = slides.length - 1
+
+          if (current < 0) {
+            current = slides.length - 1
+          }
+
           updateSlider()
         })
 

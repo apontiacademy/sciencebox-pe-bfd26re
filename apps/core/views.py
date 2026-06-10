@@ -29,6 +29,8 @@ def sobre(request):
 def solucoes(request):
     return render(request, 'solucoes.html')
 
+def softwares(request):
+    return render(request, 'softwares.html')
 
 def contato(request):
     return render(request, 'contato.html')
