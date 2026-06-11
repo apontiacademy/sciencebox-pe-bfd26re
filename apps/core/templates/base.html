@@ -18,6 +18,7 @@
     </div>
 
     <ul>
+
       <li>
         <a href="/" class="{% if request.path == '/' %}active{% endif %}">
           <span class="menu-number">01</span>
@@ -38,21 +39,13 @@
         <a href="/kits/" class="{% if '/kits' in request.path %}active{% endif %}">
           <span class="menu-number">03</span>
           <i class="menu-dot"></i>
-          <span class="menu-text">Kits</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="/solucoes/" class="{% if '/solucoes' in request.path %}active{% endif %}">
-          <span class="menu-number">04</span>
-          <i class="menu-dot"></i>
-          <span class="menu-text">Soluções</span>
+          <span class="menu-text">Produtos</span>
         </a>
       </li>
 
       <li>
         <a href="/softwares/" class="{% if '/softwares' in request.path %}active{% endif %}">
-          <span class="menu-number">05</span>
+          <span class="menu-number">04</span>
           <i class="menu-dot"></i>
           <span class="menu-text">Softwares</span>
         </a>
@@ -60,11 +53,12 @@
 
       <li>
         <a href="/contato/" class="{% if '/contato' in request.path %}active{% endif %}">
-          <span class="menu-number">06</span>
+          <span class="menu-number">05</span>
           <i class="menu-dot"></i>
           <span class="menu-text">Contato</span>
         </a>
       </li>
+
     </ul>
 
   </nav>
@@ -76,6 +70,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+
       const slides = document.querySelectorAll('.slide')
       const btnLeft = document.querySelector('.arrow.left')
       const btnRight = document.querySelector('.arrow.right')

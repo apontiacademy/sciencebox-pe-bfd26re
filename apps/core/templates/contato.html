@@ -25,7 +25,15 @@
 
   <div class="contato-direita">
 
-    <form class="form-orcamento">
+    {% if sucesso %}
+      <div style="background:#00e5ff;color:#000;padding:12px;border-radius:8px;margin-bottom:20px;font-weight:bold;">
+        Solicitação enviada com sucesso!
+      </div>
+    {% endif %}
+
+    <form class="form-orcamento" method="POST">
+
+      {% csrf_token %}
 
       <h3>
         Preencha e retornamos em até 24 horas
@@ -35,33 +43,42 @@
 
         <input
           type="text"
+          name="nome"
           placeholder="Seu nome"
           required
         >
 
         <input
           type="tel"
+          name="whatsapp"
           placeholder="WhatsApp"
           required
         >
 
         <input
           type="email"
+          name="email"
           placeholder="Seu e-mail"
         >
 
         <input
           type="text"
+          name="empresa"
           placeholder="Empresa ou negócio"
         >
 
       </div>
 
       <textarea
+        name="projeto"
         placeholder="Descreva seu projeto"
+        required
       ></textarea>
 
-      <button class="botao">
+      <button
+        type="submit"
+        class="botao"
+      >
         Solicitar orçamento
       </button>
 

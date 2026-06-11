@@ -5,43 +5,104 @@
 {% block content %}
 
 <section class="produtos">
-  
+
+  <!-- PRODUTOS -->
+
   <article class="card">
-    <a href="#">
-      <div class="card-image-container">
-        <img src="{% static 'img/img-capacitacao.jpeg' %}" alt="Qualificação">
-      </div>
-      <h3>Qualificação</h3>
-      <p>Capacitação em tecnologia para equipes escolares e de empresas.</p>
-      <a href="{% url 'contato' %}" class="botao-card">
-        Entre em Contato
-      </a>
+    <div class="card-image-container">
+      <img src="{% static 'img/img-capacitacao.jpeg' %}" alt="Qualificação">
+    </div>
+
+    <h3>Qualificação</h3>
+
+    <p>
+      Capacitação em tecnologia para equipes escolares e de empresas.
+    </p>
+
+    <a href="/produto/1/" class="botao-card">
+      Saiba Mais
     </a>
   </article>
 
   <article class="card">
-    <a href="#">
-      <div class="card-image-container">
-        <img src="{% static 'img/img-biosin.jpeg' %}" alt="Biosin">
-      </div>
-      <h3>Biosin</h3>
-      <p>Biosin Biosin Biosin Biosin Biosin Biosin Biosin Biosin Biosin</p>
-      <a href="{% url 'contato' %}" class="botao-card">
-        Entre em Contato
-      </a>
+    <div class="card-image-container">
+      <img src="{% static 'img/img-biosin.jpeg' %}" alt="Biosin">
+    </div>
+
+    <h3>Biosin</h3>
+
+    <p>
+      Soluções biomédicas para ensino e pesquisa.
+    </p>
+
+    <a href="/produto/2/" class="botao-card">
+      Saiba Mais
     </a>
   </article>
 
-    <article class="card">
-    <a href="#">
-      <div class="card-image-container">
-        <img src="{% static 'img/img-brainrec.jpeg' %}" alt="Brainrec">
-      </div>
-      <h3>Brainrec</h3>
-      <p>Brainrec Brainrec Brainrec Brainrec Brainrec Brainrec Brainrec</p>
-      <a href="{% url 'contato' %}" class="botao-card">
-        Entre em Contato
-      </a>
+  <article class="card">
+    <div class="card-image-container">
+      <img src="{% static 'img/img-brainrec.jpeg' %}" alt="BrainRec">
+    </div>
+
+    <h3>BrainRec</h3>
+
+    <p>
+      Kit educacional para aquisição de sinais biológicos.
+    </p>
+
+    <a href="/produto/3/" class="botao-card">
+      Saiba Mais
+    </a>
+  </article>
+
+  <!-- ITENS QUE VIERAM DE SOLUÇÕES -->
+
+  <article class="card">
+    <div class="card-image-container">
+      <img src="{% static 'img/educacao-icone.svg' %}" alt="Kits Educacionais">
+    </div>
+
+    <h3>Kits Educacionais</h3>
+
+    <p>
+      Aprendizado prático com tecnologia, ciência e inovação.
+    </p>
+
+    <a href="/produto/4/" class="botao-card">
+      Saiba Mais
+    </a>
+  </article>
+
+  <article class="card">
+    <div class="card-image-container">
+      <img src="{% static 'img/robotica-icone.svg' %}" alt="Robótica">
+    </div>
+
+    <h3>Robótica</h3>
+
+    <p>
+      Construção, experimentação e desenvolvimento criativo.
+    </p>
+
+    <a href="/produto/5/" class="botao-card">
+      Saiba Mais
+    </a>
+  </article>
+
+  <article class="card">
+    <div class="card-image-container">
+      <img src="{% static 'img/maker-icone.svg' %}" alt="Projetos Maker">
+    </div>
+
+    <h3>Projetos Maker</h3>
+
+    <p>
+      Automação, programação e experiências interativas.
+    </p>
+
+    <a href="/produto/6/" class="botao-card">
+      Saiba Mais
     </a>
   </article>
 
