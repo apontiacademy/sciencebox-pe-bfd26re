@@ -473,19 +473,135 @@ section {
 
 /* PRODUTOS */
 
-.card-image-container {
-  width: 100%;
-  height: 260px;
-  overflow: hidden;
-  border-radius: 14px;
-  margin-bottom: 16px;
-  border: 2px solid rgba(0, 240, 255, .4);
+.card-image-container{
+    height:250px;
+    overflow:hidden;
+    border-radius:18px;
+    margin-bottom: 20px;
 }
 
-.produtos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+.card-image-container img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.coverflow{
+    position:relative;
+    width:100%;
+    height:540px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:visible;
+}
+
+.slide{
+    position:absolute;
+    width:340px;
+    min-height:470px;
+    transition:.6s ease;
+    top:60px;
+}
+
+/* produtos */
+
+.slide.active{
+    transform:
+      translateX(0)
+      scale(1.03);
+    opacity:1;
+    z-index:5;
+    box-shadow:
+      0 0 20px rgba(0,240,255,.18),
+      0 0 40px rgba(0,240,255,.10);
+}
+
+/* CARD ESQUERDA */
+
+.slide.left{
+    transform:
+      translateX(-260px)
+      scale(.78)
+      rotateY(18deg);
+
+    opacity:.18;
+
+    filter:
+      brightness(.45);
+
+    z-index:1;
+}
+
+/* CARD DIREITA */
+
+.slide.right{
+    transform:
+      translateX(260px)
+      scale(.78)
+      rotateY(-18deg);
+
+    opacity:.18;
+
+    filter:
+      brightness(.45);
+
+    z-index:1;
+}
+
+/* ESCONDE OS OUTROS */
+
+.slide.hidden{
+    opacity:0;
+    pointer-events:none;
+}
+
+/* SETAS */
+
+.arrow{
+  position:absolute;
+
+  top:50%;
+  transform:translateY(-50%);
+
+  background:none;
+  border:none;
+
+  cursor:pointer;
+
+  z-index:20;
+
+  transition:.3s;
+}
+
+.arrow:hover{
+  transform:
+    translateY(-50%)
+    scale(1.12);
+}
+
+.arrow.left{
+  left:300px;
+}
+
+.arrow.right{
+  right:300px;
+}
+
+.arrow img{
+  width:70px;
+  height:auto;
+
+  filter:
+    drop-shadow(0 0 10px rgba(0,240,255,.4))
+    drop-shadow(0 0 20px rgba(0,240,255,.25));
+}
+
+.card{
+    display:flex;
+    flex-direction:column;
+
+    height:100%;
 }
 
 .card img {
@@ -499,7 +615,7 @@ section {
   align-items: center;
   justify-content: center;
 
-  margin-top: 20px;
+  margin-top: auto;
   padding: 12px 24px;
 
   border: 2px solid #00F0FF;

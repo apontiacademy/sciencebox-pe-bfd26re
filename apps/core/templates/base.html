@@ -68,51 +68,88 @@
     {% endblock %}
   </main>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
+<script>
 
-      const slides = document.querySelectorAll('.slide')
-      const btnLeft = document.querySelector('.arrow.left')
-      const btnRight = document.querySelector('.arrow.right')
+document.addEventListener('DOMContentLoaded', () => {
 
-      let current = 1
+    const slides = document.querySelectorAll('.slide');
 
-      function updateSlider() {
-        slides.forEach((slide, index) => {
-          slide.classList.remove('active')
+    const leftBtn = document.querySelector('.arrow.left');
+    const rightBtn = document.querySelector('.arrow.right');
 
-          if (index === current) {
-            slide.classList.add('active')
-          }
-        })
-      }
+    if(!slides.length || !leftBtn || !rightBtn){
+        return;
+    }
 
-      if (btnRight && btnLeft && slides.length > 0) {
+    let current = 0;
 
-        btnRight.addEventListener('click', () => {
-          current++
+    function updateCoverflow(){
 
-          if (current >= slides.length) {
-            current = 0
-          }
+        slides.forEach(slide => {
+            slide.classList.remove(
+                'active',
+                'left',
+                'right',
+                'hidden'
+            );
+        });
 
-          updateSlider()
-        })
+        slides[current].classList.add('active');
 
-        btnLeft.addEventListener('click', () => {
-          current--
+        const prev =
+            (current - 1 + slides.length)
+            % slides.length;
 
-          if (current < 0) {
-            current = slides.length - 1
-          }
+        const next =
+            (current + 1)
+            % slides.length;
 
-          updateSlider()
-        })
+        slides[prev].classList.add('left');
+        slides[next].classList.add('right');
 
-        updateSlider()
-      }
-    })
-  </script>
+        slides.forEach((slide,index)=>{
+
+            if(
+                index !== current &&
+                index !== prev &&
+                index !== next
+            ){
+                slide.classList.add('hidden');
+            }
+
+        });
+
+    }
+
+    rightBtn.addEventListener('click', () => {
+
+        current++;
+
+        if(current >= slides.length){
+            current = 0;
+        }
+
+        updateCoverflow();
+
+    });
+
+    leftBtn.addEventListener('click', () => {
+
+        current--;
+
+        if(current < 0){
+            current = slides.length - 1;
+        }
+
+        updateCoverflow();
+
+    });
+
+    updateCoverflow();
+
+});
+
+</script>
 
 </body>
 </html>
