@@ -63,13 +63,14 @@ a {
 /* LOGO */
 
 .side-logo {
+  margin-left: -15px;
   margin-bottom: 35px;
   display: flex;
   justify-content: flex-start;
 }
 
 .side-logo img {
-  width: 140px;
+  width: 180px;
   height: auto;
 }
 
@@ -312,27 +313,20 @@ section {
 
 .sobre-layout {
   position: relative;
-
   max-width: 1200px;
   margin: 0 auto;
-
-  min-height: 650px;
+  min-height: 550px; 
 }
 
 /* TÍTULO */
 
 .sobre-layout h2 {
   width: 100%;
-
   font-size: 45px;
   font-weight: 800;
-
   line-height: 1.1;
-
   color: #fff;
-
   margin-bottom: 40px;
-
   position: relative;
   z-index: 3;
 }
@@ -340,42 +334,36 @@ section {
 /* CAIXA DE TEXTO */
 
 .sobre-card-texto {
-  width: 80%;
-  height: 330px;
-
-  background: #43B8B5;
-
-  padding: 40px;
-
-  border-radius: 35px;
-
+  width: 85%;
+  height: auto; 
+  background: #6da5c1;
+  padding: 30px; 
+  border-radius: 30px;
   position: absolute;
-
   left: 0;
-  top: 170px;
-
+  bottom: 0; 
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .sobre-card-texto p {
   color: #fff;
-
   font-size: 22px;
-
   line-height: 1.6;
-
   margin-bottom: 20px;
   font-weight: bold;
 }
 
 .logo-sobre {
-  width: 140px;
+  width: 200px;
   height: auto;
-
+  margin-top: 5px;
+  margin-right: auto;
+  margin-left: 0;
   display: block;
-
-  margin-top: 25px;
-  margin-left: auto;
+  position: relative;
+  z-index: 5;
 }
 
 .sobre-card-texto p:last-child {
@@ -386,19 +374,15 @@ section {
 
 .sobre-imagem {
   position: absolute;
-
-  right: 0;
-  top: 80px;
-
-  width: 62%;
-
+  right: 75px;
+  bottom: -20px;
+  width: 50%;
   z-index: 2;
 }
 
 .sobre-imagem img {
   width: 100%;
   height: auto;
-
   display: block;
 }
 
@@ -638,6 +622,55 @@ section {
 }
 
 /* CONTATO */
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.contato-info h2 {
+  line-height: 0.5;
+  font-size: 40px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.contato-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+/* CAIXA DE BENEFÍCIOS (Retângulo vazado com borda azul) */
+.caixa-beneficios {
+  width: fit-content;
+  border: 2px solid var(--accent);
+  border-radius: 16px; 
+  background: transparent; 
+  padding: 24px 30px; 
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+}
+
+/* ESTILO DOS ITENS DENTRO DA CAIXA */
+.caixa-beneficios p {
+  color: #ffffff; 
+  font-size: 16px;
+  font-weight:bolder;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Opcional: Para dar um "glow" sutil na caixa combinando com seu tema */
+.caixa-beneficios {
+  box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.05), 
+              0 0 15px rgba(0, 240, 255, 0.05);
+}
 
 .contato-page {
   display: grid;
