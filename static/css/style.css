@@ -348,11 +348,13 @@ section {
 }
 
 .sobre-card-texto p {
+  width: 80%;
   color: #fff;
   font-size: 22px;
   line-height: 1.6;
   margin-bottom: 20px;
   font-weight: bold;
+  text-align: justify;
 }
 
 .logo-sobre {
@@ -666,7 +668,6 @@ section {
   gap: 10px;
 }
 
-/* Opcional: Para dar um "glow" sutil na caixa combinando com seu tema */
 .caixa-beneficios {
   box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.05), 
               0 0 15px rgba(0, 240, 255, 0.05);
@@ -730,187 +731,248 @@ footer {
   .contato-page {
     grid-template-columns: 1fr;
   }
+  
+  .sobre, .contato-page {
+    padding: 80px 40px;
+  }
 }
 
 @media (max-width: 768px){
 
-  /* MENU TOPO */
-
-  .side-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-
-    display:flex !important;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    padding:10px 0;
-
-    background:rgba(0,0,0,.85);
-    backdrop-filter:blur(8px);
-
-    height:auto;
-    z-index:999;
+  /* MENU TOPO SÓLIDO (STICKY) */
+  .side-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    background: #111111; 
+    backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    height: auto;
+    z-index: 999;
   }
 
-  .side-logo{
-    width:120px;
-    margin-bottom:8px;
+  .side-logo {
+    width: 110px;
+    margin-bottom: 8px;
   }
 
-  .side-nav ul{
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:nowrap;
-
-    gap:18px;
-
-    margin:0;
-    padding:0;
+  .side-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
   }
 
-  .side-nav ul::before{
-    display:none;
+  .side-nav ul::before {
+    display: none;
   }
 
-  .side-nav li{
-    margin:0;
-    list-style:none;
+  .side-nav li {
+    margin: 0;
+    list-style: none;
   }
 
   .menu-number,
-  .menu-dot{
-    display:none;
+  .menu-dot {
+    display: none;
   }
 
-  .menu-text{
-    font-size:12px;
+  .menu-text {
+    font-size: 16px !important;
+    font-weight: 600;
   }
 
-  /* CONTEÚDO */
-
-  .site-main{
-    margin-left:0 !important;
-    width:100%;
+  .site-main {
+    margin-left: 0 !important;
+    width: 100%;
   }
 
-  /* HERO */
-
-  .hero{
-    margin-left:0 !important;
-
-    position:relative;
-    min-height:100vh;
-    width:100%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    overflow:hidden;
-
-    padding:140px 24px 60px;
+  /* HERO MOBILE */
+  .hero {
+    margin-left: 0 !important;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 140px 20px 60px;
   }
 
-  .hero-video{
-    position:absolute;
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-    z-index:0;
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
-  .hero-container{
-    position:relative;
-    z-index:2;
-
-    width:100%;
-    max-width:100%;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    margin:0 auto;
-    padding:0 20px;
-
-    gap:24px;
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    gap: 20px;
   }
 
-  .hero-text{
-    width:100%;
-    max-width:100%;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
+  .hero-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hero-text h1{
-    font-size:32px;
-    line-height:1.2;
+  .hero-text h1 {
+    font-size: 28px;
+    line-height: 1.2;
   }
 
-  .hero-text p{
-    font-size:16px;
-    line-height:1.5;
+  .hero-text p {
+    font-size: 15px;
+    line-height: 1.5;
   }
 
-  .btn-science-cta{
-    padding:16px 24px;
+  /* SEÇÃO QUEM SOMOS (SOBRE) MOBILE */
+  .sobre {
+    padding: 10px 20px 60px;
   }
 
-  /* SEÇÕES */
+  .sobre-layout {
+    min-height: auto;
+  }
+
+  .sobre-layout h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  /* IMAGEM REMOVIDA DO MOBILE CONFORME PEDIDO */
+  .sobre-imagem {
+    display: none !important;
+  }
+
+  .sobre-card-texto {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .sobre-card-texto p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .logo-sobre {
+      width: 120px; /* Tamanho ajustado para telas menores */
+      margin: 20px auto 0 !important; /* Mantém a logo perfeitamente centralizada no mobile */
+    }
+
+  /* AJUSTE DO CARROSSEL COVERFLOW NO MOBILE */
+  .coverflow {
+      height: 500px; /* Aumentado levemente para a sombra (box-shadow) de baixo não ser cortada */
+      overflow: visible !important; /* Mudado de hidden para visible para libertar os lados do carrossel */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  .slide {
+    width: 270px; /* Reduzido para caber perfeitamente nas telas menores */
+    min-height: 400px;
+    top: 30px;
+  }
+
+  /* Suavização das transições tridimensionais no celular */
+  .slide.left {
+    transform: translateX(-130px) scale(.72) rotateY(15deg);
+    opacity: .25;
+  }
+
+  .slide.right {
+    transform: translateX(130px) scale(.72) rotateY(-15deg);
+    opacity: .25;
+  }
+
+  /* CORREÇÃO DO POSICIONAMENTO DAS SETAS DO SEU CARROSSEL */
+  .arrow {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .arrow:hover {
+    transform: translateY(-50%) scale(1.1) !important;
+  }
+
+  .arrow.left {
+    left: 10px !important;   /* CORRIGIDO: Forçado na extrema esquerda */
+    right: auto !important;
+  }
+
+  .arrow.right {
+    right: 10px !important;  /* CORRIGIDO: Forçado na extrema direita */
+    left: auto !important;
+  }
+
+  .arrow img {
+    width: 42px !important;  /* Escalonado para tamanho mobile confortável */
+  }
+
+  /* FORMULÁRIO E CONTATO MOBILE */
+  .contato-page {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 10px 20px 60px;
+  }
+
+  .contato-info h2 {
+    font-size: 32px;
+    text-align: center;
+  }
 
   .sobre-cards,
   .preview-cards,
   .grid-kits,
-  .grid-form{
-    grid-template-columns:1fr;
+  .grid-form {
+    grid-template-columns: 1fr;
   }
 
-  .contato-page{
-    grid-template-columns:1fr;
-    gap:30px;
+  .caixa-beneficios {
+    width: 100% !important;
   }
 
-  .sobre-layout{
-    min-height:auto;
+  .caixa-beneficios p {
+    text-align: center !important;
   }
 
-  .sobre-imagem{
-    width:100%;
-    position:relative;
-    top:auto;
-    right:auto;
-    margin-top:30px;
-  }
-
-  .sobre-card-texto{
-    width:100%;
-    height:auto;
-    position:relative;
-    top:auto;
-    left:auto;
-    padding:24px;
-  }
-
-  footer{
-    padding:24px;
+  footer {
+    padding: 24px;
   }
 }
