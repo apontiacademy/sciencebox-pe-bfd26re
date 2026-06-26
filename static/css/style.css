@@ -976,3 +976,154 @@ footer {
     padding: 24px;
   }
 }
+
+.software-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.software-header {
+    margin-bottom: 50px;
+}
+
+.software-header h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.software-header p {
+    color: #cfd8ff;
+    font-size: 18px;
+}
+
+.software-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.software-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.software-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+}
+
+.software-card h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.software-card p {
+    color: #cfd8ff;
+    margin-bottom: 20px;
+}
+
+.btn-software {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    background: #00e5ff;
+    color: #000;
+    font-weight: 600;
+}
+
+.software-image-placeholder {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    border: 2px dashed rgba(255,255,255,0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+    .software-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .software-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.software-detalhe {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.software-detalhe-header {
+    margin-bottom: 40px;
+}
+
+.software-detalhe-header h1 {
+    color: #fff;
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.software-detalhe-header p {
+    color: #cfd8ff;
+}
+
+.software-detalhe-card {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.software-detalhe-imagem {
+    width: 450px;
+    height: 300px;
+
+    border: 2px dashed rgba(255,255,255,0.15);
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255,255,255,0.5);
+}
+
+.software-detalhe-conteudo {
+    flex: 1;
+}
+
+.software-detalhe-conteudo h2,
+.software-detalhe-conteudo h3 {
+    color: white;
+}
+
+.software-detalhe-conteudo p,
+.software-detalhe-conteudo li {
+    color: #cfd8ff;
+}
+
+.software-detalhe-conteudo ul {
+    margin: 20px 0;
+}
+
+.software-detalhe .btn-software:first-child {
+    margin-bottom: 30px;
+}

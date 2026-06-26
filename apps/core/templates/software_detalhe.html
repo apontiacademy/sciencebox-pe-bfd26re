@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="software-detalhe">
+
+    <a href="{% url 'softwares' %}" class="btn-software">
+        ← Voltar
+    </a>
+
+    <div class="software-detalhe-header">
+        <h1>Software</h1>
+
+        <p>
+            Informações detalhadas do software.
+        </p>
+    </div>
+
+    <div class="software-detalhe-card">
+
+        <div class="software-detalhe-imagem">
+            Imagem do Software
+        </div>
+
+        <div class="software-detalhe-conteudo">
+
+            <h2>Software em Desenvolvimento</h2>
+
+            <p>
+                Este software faz parte das soluções tecnológicas desenvolvidas
+                pela Science Box.
+            </p>
+
+            <h3>Funcionalidades</h3>
+
+            <ul>
+                <li>Funcionalidade 01</li>
+                <li>Funcionalidade 02</li>
+                <li>Funcionalidade 03</li>
+            </ul>
+
+            <a href="/contato/" class="btn-software">
+                Entrar em Contato
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

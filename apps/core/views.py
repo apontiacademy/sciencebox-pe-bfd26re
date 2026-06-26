@@ -30,6 +30,13 @@ def sobre(request):
 def softwares(request):
     return render(request, 'softwares.html')
 
+def softwares(request):
+    return render(request, 'softwares.html')
+
+
+def software_detalhe(request):
+    return render(request, 'software_detalhe.html')
+
 
 def contato(request):
 

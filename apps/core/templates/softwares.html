@@ -1,17 +1,78 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
 <section class="software-page">
-    <h1>Softwares</h1>
 
-    <p>
-        Soluções digitais desenvolvidas pela Science Box.
-    </p>
+    <div class="software-header">
+        <h1>Softwares</h1>
 
-    <p>
-        Conteúdo em desenvolvimento.
-    </p>
+        <p>
+            Soluções digitais desenvolvidas pela Science Box.
+        </p>
+    </div>
+
+    <div class="software-grid">
+
+        <!-- Software 01 -->
+        <div class="software-card">
+
+            <div class="software-image-placeholder">
+                Imagem do Software
+            </div>
+
+            <h3>Software 01</h3>
+
+            <p>
+                Descrição breve do software.
+            </p>
+
+            <a href="{% url 'software_detalhe' %}" class="btn-software">
+                Saiba Mais
+            </a>
+
+        </div>
+
+        <!-- Software 02 -->
+        <div class="software-card">
+
+            <div class="software-image-placeholder">
+                Imagem do Software
+            </div>
+
+            <h3>Software 02</h3>
+
+            <p>
+                Descrição breve do software.
+            </p>
+
+            <a href="{% url 'software_detalhe' %}" class="btn-software">
+                Saiba Mais
+            </a>
+
+        </div>
+
+        <!-- Software 03 -->
+        <div class="software-card">
+
+            <div class="software-image-placeholder">
+                Imagem do Software
+            </div>
+
+            <h3>Software 03</h3>
+
+            <p>
+                Descrição breve do software.
+            </p>
+
+            <a href="{% url 'software_detalhe' %}" class="btn-software">
+                Saiba Mais
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
