@@ -158,9 +158,7 @@ a {
 .side-nav .menu-text {
   font-size: 18px;
   font-weight: 500;
-
   color: var(--text-muted);
-
   transition: .3s ease;
 }
 
@@ -172,7 +170,6 @@ a {
 
 .side-nav a.active .menu-dot {
   background: var(--accent);
-
   box-shadow:
     0 0 10px var(--accent),
     0 0 20px var(--accent);
@@ -510,12 +507,9 @@ section {
       translateX(-260px)
       scale(.78)
       rotateY(18deg);
-
     opacity:.18;
-
     filter:
       brightness(.45);
-
     z-index:1;
 }
 
@@ -526,16 +520,11 @@ section {
       translateX(260px)
       scale(.78)
       rotateY(-18deg);
-
     opacity:.18;
-
     filter:
       brightness(.45);
-
     z-index:1;
 }
-
-/* ESCONDE OS OUTROS */
 
 .slide.hidden{
     opacity:0;
@@ -546,17 +535,12 @@ section {
 
 .arrow{
   position:absolute;
-
   top:50%;
   transform:translateY(-50%);
-
   background:none;
   border:none;
-
   cursor:pointer;
-
   z-index:20;
-
   transition:.3s;
 }
 
@@ -586,7 +570,6 @@ section {
 .card{
     display:flex;
     flex-direction:column;
-
     height:100%;
 }
 
@@ -600,22 +583,16 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   margin-top: auto;
   padding: 12px 24px;
-
   border: 2px solid #00F0FF;
   border-radius: 12px;
-
   background: transparent;
   color: #00F0FF;
-
   font-size: 14px;
   font-weight: 700;
   letter-spacing: .5px;
-
   transition: all .3s ease;
-
   cursor: pointer;
 }
 
@@ -645,7 +622,8 @@ section {
   color: #ffffff;
 }
 
-/* CAIXA DE BENEFÍCIOS (Retângulo vazado com borda azul) */
+/* CAIXA DE BENEFÍCIOS*/
+
 .caixa-beneficios {
   width: fit-content;
   border: 2px solid var(--accent);
@@ -657,7 +635,7 @@ section {
   gap: 16px; 
 }
 
-/* ESTILO DOS ITENS DENTRO DA CAIXA */
+/*ITENS DENTRO DA CAIXA */
 .caixa-beneficios p {
   color: #ffffff; 
   font-size: 16px;
@@ -725,13 +703,11 @@ footer {
   .site-main {
     margin-left: 0;
   }
-
   .hero-container,
   .sobre-grid,
   .contato-page {
     grid-template-columns: 1fr;
   }
-  
   .sobre, .contato-page {
     padding: 80px 40px;
   }
@@ -739,7 +715,6 @@ footer {
 
 @media (max-width: 768px){
 
-  /* MENU TOPO SÓLIDO (STICKY) */
   .side-nav {
     position: sticky;
     top: 0;
@@ -868,7 +843,6 @@ footer {
     margin-bottom: 24px;
   }
 
-  /* IMAGEM REMOVIDA DO MOBILE CONFORME PEDIDO */
   .sobre-imagem {
     display: none !important;
   }
@@ -890,14 +864,13 @@ footer {
   }
 
   .logo-sobre {
-      width: 120px; /* Tamanho ajustado para telas menores */
-      margin: 20px auto 0 !important; /* Mantém a logo perfeitamente centralizada no mobile */
+      width: 120px; 
+      margin: 20px auto 0 !important;
     }
 
-  /* AJUSTE DO CARROSSEL COVERFLOW NO MOBILE */
   .coverflow {
-      height: 500px; /* Aumentado levemente para a sombra (box-shadow) de baixo não ser cortada */
-      overflow: visible !important; /* Mudado de hidden para visible para libertar os lados do carrossel */
+      height: 500px; 
+      overflow: visible !important;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -905,12 +878,11 @@ footer {
     }
 
   .slide {
-    width: 270px; /* Reduzido para caber perfeitamente nas telas menores */
+    width: 270px;
     min-height: 400px;
     top: 30px;
   }
 
-  /* Suavização das transições tridimensionais no celular */
   .slide.left {
     transform: translateX(-130px) scale(.72) rotateY(15deg);
     opacity: .25;
@@ -921,7 +893,6 @@ footer {
     opacity: .25;
   }
 
-  /* CORREÇÃO DO POSICIONAMENTO DAS SETAS DO SEU CARROSSEL */
   .arrow {
     top: 50% !important;
     transform: translateY(-50%) !important;
@@ -932,17 +903,17 @@ footer {
   }
 
   .arrow.left {
-    left: 10px !important;   /* CORRIGIDO: Forçado na extrema esquerda */
+    left: 10px !important;   
     right: auto !important;
   }
 
   .arrow.right {
-    right: 10px !important;  /* CORRIGIDO: Forçado na extrema direita */
+    right: 10px !important;  
     left: auto !important;
   }
 
   .arrow img {
-    width: 42px !important;  /* Escalonado para tamanho mobile confortável */
+    width: 42px !important;
   }
 
   /* FORMULÁRIO E CONTATO MOBILE */
@@ -1038,6 +1009,11 @@ footer {
     background: #00e5ff;
     color: #000;
     font-weight: 600;
+    
+}
+
+.btn-software:hover {
+  transform: scale(1.05) !important;
 }
 
 .software-image-placeholder {
@@ -1045,11 +1021,9 @@ footer {
     height: 180px;
     border-radius: 12px;
     border: 2px dashed rgba(255,255,255,0.2);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: rgba(255,255,255,0.5);
     margin-bottom: 20px;
 }
@@ -1095,14 +1069,11 @@ footer {
 .software-detalhe-imagem {
     width: 450px;
     height: 300px;
-
     border: 2px dashed rgba(255,255,255,0.15);
     border-radius: 20px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: rgba(255,255,255,0.5);
 }
 
